@@ -22,7 +22,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/account' do
-    if User.find_by(username: params[:username],password: params[:password] )
+    if User.find_by(username: params[:username])
       @user =  User.find_by_id(session[:user_id])
       erb :account
     else
